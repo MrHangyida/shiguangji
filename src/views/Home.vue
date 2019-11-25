@@ -57,7 +57,7 @@
 						</div> 
 					</div>
 					
-				<div v-if="showbigphone" class="bigphone animated fadeInDownBig" style="width: 363px;height: 702px;">
+				 <div v-if="showbigphone" class="bigphone animated fadeInDownBig" style="width: 363px;height: 702px;">
 					<div class="phoneing1"></div>
 					<div class="phonecontent">
 						<p class="grid-content">活动时间：xx年xx月xx日14:00</p>
@@ -67,7 +67,7 @@
 					<p class="activeP1">立即报名</p>
 				 </div>
 				</div>
-			</div>
+			  </div>
 			</div>
 
 
@@ -240,7 +240,11 @@
 
 			<div class="section">
 				<div class="box4">
-					section4
+					<div class="section3">
+						<div class="bigphone3 animated fadeInDownBig" style="width: 220px;height: 425px;">
+							<p class="activeP3 animated fadeInUp">一键发送</p>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -359,7 +363,7 @@
 					menu: '#menu',
 					// navigation: true,
 					// anchors: ['page0', 'page1', 'page2',"page3","page4"],
-					sectionsColor: ['#41b883', '#F1F1F1', '#F1F1F1', '#fec401', '#1bcee6', ]
+					sectionsColor: ['#41b883', '#F1F1F1', '#F1F1F1', '#F1F1F1', '#1bcee6', ]
 				}
 			}
 		},
@@ -513,7 +517,7 @@
 				}
 
 			},
-			jindu() {
+			jindu() { //条形统计图的增长
 				var that = this
 				var settime = setInterval(function() {
 					that.time1++
@@ -524,7 +528,7 @@
 
 
 			},
-			jindu1() {
+			jindu1() { //条形统计图的增长
 				var that = this
 				var settime = setInterval(function() {
 					that.time2++
@@ -535,7 +539,7 @@
 
 
 			},
-			jindu2() {
+			jindu2() { //条形统计图的增长
 				var that = this
 				var settime = setInterval(function() {
 					that.time3++
@@ -546,7 +550,7 @@
 
 
 			},
-			jindu3() {
+			jindu3() { //条形统计图的增长
 				var that = this
 				var settime = setInterval(function() {
 					that.time4++
@@ -903,6 +907,7 @@
 		line-height: 40px;
 		color: #FFFFFF;
 		background-color: #FAB25B;
+		cursor: pointer;
     }
 	.subiao img {
 		position: absolute;
@@ -951,4 +956,36 @@
 		left: 39px;
 		color: #fff;
 	}
+	.section3 {
+		width: 58%;
+		margin: 0 auto;
+		border: 6.35px solid #F2819C;
+		/* border-radius: 45px; */
+		position: relative;
+		top: 90px;
+		height: 768px;
+	}
+	.bigphone3{
+		background-image: url(../store/imges/phone.png);
+		background-repeat: no-repeat;
+		position: relative;
+		top: 80px;
+		left: 461px;
+	}
+	 .activeP3 {
+		animate-duration: 10s;
+		animate-delay: 8s;
+    	position: absolute;
+		bottom: 60px;
+		left: 40px;
+		width: 140px;
+		height: 30px;
+		border-radius: 16px;
+		text-align: center;
+		line-height: 30px;
+		color: #FFFFFF;
+		background-color: #FAB25B;
+		font-size: 16px;
+		cursor: pointer;
+    }
 </style>
