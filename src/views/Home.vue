@@ -4,10 +4,9 @@
 			<!--      第一屏-->
 			<div class="section">
 				<div class="box1">
-					<div class="slide">
+					<div class="slide animated fadeInDownBig">
 						section1
 					</div>
-
 				</div>
 			</div>
 			<!--      第二屏-->
@@ -240,9 +239,57 @@
 
 			<div class="section">
 				<div class="box4">
-					<div class="section3">
-						<div class="bigphone3 animated fadeInDownBig" style="width: 220px;height: 425px;">
-							<p class="activeP3 animated fadeInUp">一键发送</p>
+					<div class="section3" v-if="box4">
+						<div class="handphone animated fadeInDownBig" style="width: 345px;height: 529px;">
+							<div class="hand1" v-show="false">
+								<div class="tophand"></div>
+								<div class="handlist animated fadeInDownBig">
+									<div class="handleft"></div>
+									<div class="handright">
+										<span class="handlong"></span>
+										<span class="handshot"></span>
+									</div>
+								</div>
+								<div class="handlist one animated fadeInDownBig">
+									<div class="handleft"></div>
+									<div class="handright">
+										<span class="handlong"></span>
+										<span class="handshot"></span>
+									</div>
+								</div>
+								<div class="handlist two animated fadeInDownBig">
+									<div class="handleft"></div>
+									<div class="handright">
+										<span class="handlong"></span>
+										<span class="handshot"></span>
+									</div>
+								</div>
+								<p class="activeP3 animated fadeInDownBig" style="animation-duration: 2s">一键发送</p>
+								<div class="cursor animated slideInUp" style="animation-duration: 2s;animation-delay:1s">
+									<img src="../store/imges/shouzhi.png" alt="">
+								</div>
+								<div class="handtype1 animated fadeInDownBig">
+									<p><img src="../store/imges/type1.png" alt=""></p>
+									<p style="line-height:140px"><img src="../store/imges/type1_1.png" alt=""></p>
+								</div>
+								<div class="handtype2 animated fadeInDownBig">
+									<p><img src="../store/imges/type2.png" alt=""></p>
+									<p><img src="../store/imges/type2_2.png" alt=""></p>
+								</div>
+								<div class="handtype3 animated fadeInDownBig">
+									<p><img src="../store/imges/type3.png" alt=""></p>
+									<p><img src="../store/imges/type3_3.png" alt=""></p>
+								</div>
+								<div class="handtype4 animated fadeInDownBig">
+									<p><img src="../store/imges/type4.png" alt=""></p>
+									<p><img src="../store/imges/type4_4.png" alt=""></p>
+									<p><img src="../store/imges/type4_4_4.png" alt=""></p>
+								</div>
+								<div class="handtype5 animated fadeInDownBig">
+									<p><img src="../store/imges/type5_5.png" alt=""></p>
+									<p><img src="../store/imges/type5.png" alt=""></p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -258,7 +305,6 @@
 		</full-page>
 	</div>
 </template>
-
 <script>
 	export default {
 		name: '',
@@ -284,6 +330,7 @@
 				time2: 5,
 				time3: 3,
 				time4: 10,
+				box4:false,
 				options: {
 
 					//           //为每个section设置背景色
@@ -387,6 +434,7 @@
 					}, 3500)
 					var newa = []
 					this.showtwo = false
+					this.box4=false
 					clearInterval(this.settimeou)
 					this.showbigphone=false
 					this.a1 = false
@@ -408,6 +456,7 @@
 					this.twos = 0
 					this.num = 0
 					this.num = 0
+					this.box4=false
 					var that = this
 					this.$nextTick(function(){
 						that.showtwo = true
@@ -447,7 +496,7 @@
 					
 						
 				} else if(td.index == 3) {
-					
+					this.box4=true;
 					this.showtwo = false
 					clearInterval(this.settimeou)
 					this.showbigphone=false
@@ -470,7 +519,6 @@
 					this.num = 0
 					this.num = 0
 				}else if(td.index == 4){
-					
 					this.time1 = 0
 					this.time2 = 0
 					this.time3 = 0
@@ -480,6 +528,7 @@
 					this.num = 0
 					this.num = 0
 					this.showtwo = false
+					this.box4=false;
 					clearInterval(this.settimeou)
 					this.showbigphone=false
 					this.a1 = false
@@ -502,6 +551,7 @@
 					this.num = 0
 					this.num = 0
 					this.showtwo = false
+					this.box4=false
 					clearInterval(this.settimeou)
 					this.showbigphone=false
 					this.a1 = false
@@ -560,7 +610,7 @@
 				}, 35)
 
 
-			}
+			},
 
 			// /向上滚动一页
 			// moveSectionUp();
@@ -597,10 +647,11 @@
 </script>
 <!-- rotateInUpRight -->
 <style scoped>
+	
 	.dowebok {
-		animate-duration: 3s;
-		animate-delay: 1s;
-		animate-iteration-count: 1;
+		animation-duration: 3s;
+		animation-delay: 1s;
+		animation-iteration-count: 1;
 	}
 
 	.tow2 {
@@ -682,7 +733,7 @@
 		position: relative;
 		bottom: 15px;
 		left: 89px;
-		animate-delay: 10s;
+		animation-delay: 10s;
 	}
 
 	.myline {
@@ -714,8 +765,8 @@
 		position: relative;
 		bottom: 10px;
 		left: 20px;
-		animate-duration: 10s;
-		animate-delay: 4s;
+		animation-duration: 10s;
+		animation-delay: 4s;
 
 	}
 
@@ -745,11 +796,11 @@
 	}
 
 	.son2 {
-		animate-duration: 10s;
+		animation-duration: 10s;
 		position: relative;
 		bottom: 10px;
 		left: 197px;
-		animate-delay: 6s;
+		animation-delay: 6s;
 	}
 
 	.son2 div {
@@ -762,8 +813,8 @@
 	}
 
 	.son3 {
-		animate-duration: 10s;
-		animate-delay: 8s;
+		animation-duration: 10s;
+		animation-delay: 8s;
 		position: relative;
 		bottom: 10px;
 		left: 376px;
@@ -779,7 +830,7 @@
 	}
 
 	.buleline {
-		animate-duration: 10s;
+		animation-duration: 10s;
 		display: block;
 		width: 199px;
 		margin-bottom: 15px;
@@ -898,7 +949,7 @@
 	}
     .activeP1 {
     	position: absolute;
-		bottom: 110px;
+		bottom: 115px;
 		left: 62px;
 		width: 230px;
 		height: 40px;
@@ -922,15 +973,15 @@
 		top: -62px;
 	}
 	.litelcomputer img{
-		    right: 482px;
-		    position: relative;
-		    bottom: 220px
+		right: 482px;
+		position: relative;
+		bottom: 220px
 	}
 	.wenjian{
-		       position: relative;
-		       bottom: 256px;
-		       left: 271px;
-		       width: 30%;
+		position: relative;
+		bottom: 256px;
+		left: 271px;
+		width: 30%;
 	}
 	.computerwifi{
 		position: relative;
@@ -958,26 +1009,24 @@
 	}
 	.section3 {
 		width: 58%;
+		height: 768px;
 		margin: 0 auto;
-		border: 6.35px solid #F2819C;
+		/* border: 6.35px solid #F2819C; */
 		/* border-radius: 45px; */
 		position: relative;
-		top: 90px;
-		height: 768px;
+		top: 240px;
 	}
-	.bigphone3{
-		background-image: url(../store/imges/phone.png);
+	.handphone{
+		background-image: url(../store/imges/handphone.png);
 		background-repeat: no-repeat;
 		position: relative;
 		top: 80px;
 		left: 461px;
 	}
 	 .activeP3 {
-		animate-duration: 10s;
-		animate-delay: 8s;
     	position: absolute;
-		bottom: 60px;
-		left: 40px;
+		bottom: 205px;
+		left: 113px;
 		width: 140px;
 		height: 30px;
 		border-radius: 16px;
@@ -988,4 +1037,122 @@
 		font-size: 16px;
 		cursor: pointer;
     }
+	.tophand{
+		width: 163px;
+		height: 19px;
+		background: #6EC4F4;
+		position: absolute;
+		top: 32px;
+		left: 101px;
+	}
+	.handlist{
+		width: 150px;
+		height: 40.5px;
+		background: #A7CEE3;
+		box-sizing: border-box;
+		padding-left: 13px;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: 108px;
+		top: 88px;
+		margin-bottom: 24px;
+		border-radius: 5px;
+		animation-duration: 2s;
+	}
+	.handlist.one{
+		top:153px;
+	}
+	.handlist.two{
+		top:218px;
+	}
+	.handleft{
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background: #CEEAFA;
+		/* margin-left: 13px; */
+	}
+	.handright{
+		width: 90px;
+		height: 24px;
+		margin-left: 10px;
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 0;
+		justify-content: center;
+	}
+	.handright .handlong{
+		width: 90px;
+		height: 4px;
+		background: #CEEAFA;
+		border-radius: 2px;
+	}
+	.handright .handshot{
+		width: 62px;
+		height: 4px;
+		background: #CEEAFA;
+		border-radius: 2px;
+		margin-top: 8px;
+	}
+	.handtype1{
+		display: flex;
+		justify-content: center;
+		height: 140px;
+		position: absolute;
+		right: 323px;
+		bottom: 239px;
+		animation-delay:3s;
+	}
+	.handtype2{
+		position: absolute;
+		right: 310px;
+		bottom: 399px;
+		animation-delay:3s;
+	}
+	.handtype2 p:nth-child(1){
+		position: relative;
+		left: -60px;
+		top:7px;
+	}
+	.handtype3{
+		position: absolute;
+		left:113px;
+		top: -280px;
+		animation-delay:3s;
+	}
+	.handtype4{
+		position: absolute;
+		left: 340px;
+		bottom: 399px;
+		animation-delay:3s;
+	}
+	.handtype4 p:nth-child(1){
+		position: relative;
+		left: 55px;
+		top:20px;
+	}
+	.handtype4 p:nth-child(2){
+		position: relative;
+		left: -60px;
+		top:85px;
+	}
+	.handtype5{
+		display: flex;
+		justify-content: center;
+		height: 140px;
+		line-height: 140px;
+		position: absolute;
+		right: -283px;
+		bottom: 239px;
+		animation-delay:3s;
+	}
+	.cursor{
+		position: absolute;
+		right: -60px;
+		bottom: -20px;
+	}
+	.cursor img{
+		transform: scale(1.5)
+	}
 </style>

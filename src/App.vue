@@ -1,11 +1,21 @@
 <template>
  <div id="app">
-	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
    <router-view />
  </div>
 </template>
 
 <style>
+*{
+		margin:0;
+		padding: 0;
+		list-style: none;
+		font-weight: normal;
+		text-decoration: none;
+}
+body,html{
+  width: 100%;
+  height: 100%;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
