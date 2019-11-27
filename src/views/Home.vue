@@ -3,10 +3,8 @@
 		<full-page :options="options" ref="page">
 			<!--      第一屏-->
 			<div class="section">
-				<div class="box1">
-					<div class="slide animated fadeInDownBig">
-						section1
-					</div>
+				<div class="box1" style="width:100%;height:100%;">
+					<img src="../store/imges/bannner.png" alt="" style="width:100%;height:100%;">
 				</div>
 			</div>
 			<!--      第二屏-->
@@ -305,25 +303,25 @@
 							<div class="hand2" v-if="hand2flag1" ref="aa">
 								<img src="../store/imges/1_1.png" alt="">
 							</div>
-							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s;animation-timing-function:cubic-bezier(0,-1.32,.83,.6);" v-if="hand2flag1">
+							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s" v-if="hand2flag1">
 								<img src="../store/imges/shouzhi.png" alt="">
 							</div>
 							<div class="hand2 animated fadeIn" v-if="hand2flag2">
 								<img src="../store/imges/2_2.png" alt="">
 							</div>
-							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s;animation-timing-function:cubic-bezier(0,-1.32,.83,.6);" v-if="hand2flag2">
+							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s" v-if="hand2flag2">
 								<img src="../store/imges/shouzhi.png" alt="">
 							</div>
 							<div class="hand2 animated fadeIn" v-if="hand2flag3">
 								<img src="../store/imges/3_3.jpg" alt="">
 							</div>
-							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s;animation-timing-function:cubic-bezier(0,-1.32,.83,.6);" v-if="hand2flag3">
+							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s" v-if="hand2flag3">
 								<img src="../store/imges/shouzhi.png" alt="">
 							</div>
 							<div class="hand2 animated fadeIn" v-if="hand2flag4">
 								<img src="../store/imges/4_4.png" alt="">
 							</div>
-							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s;animation-timing-function:cubic-bezier(0,-1.32,.83,.6);" v-if="hand2flag4">
+							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s" v-if="hand2flag4">
 								<img src="../store/imges/shouzhi.png" alt="">
 							</div>
 					</div>
@@ -456,19 +454,6 @@
 			}
 		},
 		methods: {
-			aa(e){
-				let scrFlag=false;
-				let timer=null;
-				let aa=this.$refs.aa;
-				if(!scrFlag){
-					clearTimeout(timer)
-					timer=setTimeout(function(){
-						scrFlag=true;
-						aa.scrollTo(0,420)
-					},1000)
-				}
-				
-			},
 			click() {
 				// vue调用fullpapge的方法
 				this.$refs.page.api.moveSectionDown();
@@ -558,21 +543,38 @@
 				} else if(td.index == 3) {
 					this.box4=1;
 					this.hand1flag=true;
+					this.hand2flag1=false;
+					this.hand2flag2=false;
+					this.hand2flag3=false;
 					var that=this;
 					var hand1SetTime=setTimeout(function(){
 							that.box4=2;
 							that.hand2flag1=true;
+							that.hand2flag2=false;
+							that.hand2flag3=false;
+							that.hand2flag4=false;
+							clearTimeout(hand1SetTime)
 							var hand1SetTime=setTimeout(function(){
 								that.hand2flag1=false;
+								that.hand2flag4=false;
+								that.hand2flag3=false;
 								that.hand2flag2=true;
+								clearTimeout(hand1SetTime)
 								var hand1SetTime=setTimeout(function(){
+									that.hand2flag1=false;
 									that.hand2flag2=false;
+									that.hand2flag4=false;
 									that.hand2flag3=true;
+									clearTimeout(hand1SetTime)
 									var hand1SetTime=setTimeout(function(){
+										that.hand2flag1=false;
+										that.hand2flag2=false;
 										that.hand2flag3=false;
 										that.hand2flag4=true;
-									},6000)
-								},6000)
+										console.log(that.hand2flag1,that.hand2flag2,that.hand2flag3,that.hand2flag4)
+										clearTimeout(hand1SetTime)
+									},4000)
+								},4000)
 							},4000)
 					},4000)
 					this.showtwo = false
@@ -729,7 +731,11 @@
 </script>
 <!-- rotateInUpRight -->
 <style scoped>
-	
+	.box3{
+		width: 100%;
+		height: 100%;
+	}
+
 	.dowebok {
 		animation-duration: 3s;
 		animation-delay: 1s;
@@ -744,8 +750,6 @@
 		margin: 0;
 		padding: 0;
 	}
-
-	.cc {}
 
 	.section2 {
 		width: 58%;
@@ -789,7 +793,6 @@
 	.myinfor {
 		text-align: left;
 		height: 175px;
-
 	}
 
 	.myinfor span {
