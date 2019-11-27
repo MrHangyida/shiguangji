@@ -38,6 +38,9 @@
 							<div class="subiao animated " :class="showdian==true ? 'rotateInUpRight':''" v-show="showdian"><img src="../store/imges/鼠标.png" alt=""></div>
 						</div>
 					</div>
+					<div class="computer wenzi animated" :class="showlitilecomputer ? 'fadeOutUp':''"  style="animation-duration: 3s" v-if="!showbigphone">
+						老师可以发送最新的活动、课程信息，让更多周边家长了解到活动和课程特色、优势；自动接收订单，生意不用愁
+					</div>
 					<!--  showlitilecomputer-->
 					<div v-if="showlitilecomputer" :class="showlitilecomputer ? 'fadeInRight':(showbigphone ? 'bounceOut':'')"  style="animation-duration: 5s">
 						<div class="computerwifi">
@@ -230,6 +233,9 @@
 								</div>
 							</div>
 						</div>
+						<div class="animated lightSpeedIn">
+							以中考、高考为指导的孩子综合素质评价指标
+						</div>
 					</div>
 					<div v-if="twos!=1" v-show="assc==1" class="shouzhi animated" id="dongshou" :class="assc==1 ? 'rotateInUpRight':''"><img
 						 src="../store/imges/header.png" alt="" width="155" hspace="5" vspace="5"></div>
@@ -239,9 +245,9 @@
 
 			<div class="section">
 				<div class="box4">
-					<div class="section3" v-if="box4">
-						<div class="handphone animated fadeInDownBig" style="width: 345px;height: 529px;">
-							<div class="hand1" v-show="false">
+					<div class="section3" v-if="box4===1">
+						<div class="handphone animated fadeInDownBig" style="width: 345px;height: 529px;" >
+							<div class="hand1" v-if="hand1flag">
 								<div class="tophand"></div>
 								<div class="handlist animated fadeInDownBig">
 									<div class="handleft"></div>
@@ -265,32 +271,61 @@
 									</div>
 								</div>
 								<p class="activeP3 animated fadeInDownBig" style="animation-duration: 2s">一键发送</p>
-								<div class="cursor animated slideInUp" style="animation-duration: 2s;animation-delay:1s">
-									<img src="../store/imges/shouzhi.png" alt="">
-								</div>
-								<div class="handtype1 animated fadeInDownBig">
-									<p><img src="../store/imges/type1.png" alt=""></p>
+								<div class="handtype1 left">
+									<p><img src="../store/imges/type1.png" alt="" style="transform:scale(.8)"></p>
 									<p style="line-height:140px"><img src="../store/imges/type1_1.png" alt=""></p>
 								</div>
-								<div class="handtype2 animated fadeInDownBig">
-									<p><img src="../store/imges/type2.png" alt=""></p>
-									<p><img src="../store/imges/type2_2.png" alt=""></p>
+								<div class="handtype2 left">
+									<p><img src="../store/imges/type2.png" alt="" style="transform:scale(.8)"></p>
+									<p><img src="../store/imges/type2_2.png" alt="" ></p>
 								</div>
 								<div class="handtype3 animated fadeInDownBig">
-									<p><img src="../store/imges/type3.png" alt=""></p>
+									<p><img src="../store/imges/type3.png" alt="" style="transform:scale(.8)"></p>
 									<p><img src="../store/imges/type3_3.png" alt=""></p>
 								</div>
-								<div class="handtype4 animated fadeInDownBig">
-									<p><img src="../store/imges/type4.png" alt=""></p>
+								<div class="handtype4 animated fadeInRight">
+									<p><img src="../store/imges/type4.png" alt="" style="transform:scale(.8)"></p>
 									<p><img src="../store/imges/type4_4.png" alt=""></p>
 									<p><img src="../store/imges/type4_4_4.png" alt=""></p>
 								</div>
-								<div class="handtype5 animated fadeInDownBig">
+								<div class="handtype5 animated fadeInRight">
 									<p><img src="../store/imges/type5_5.png" alt=""></p>
-									<p><img src="../store/imges/type5.png" alt=""></p>
+									<p><img src="../store/imges/type5.png" alt="" style="transform:scale(.8)"></p>
+								</div>
+								<div class="cursor animated slideInUp" style="animation-duration: 2s;animation-delay:1s">
+										<img src="../store/imges/shouzhi.png" alt="">
 								</div>
 							</div>
 						</div>
+						<div class="computer wenzi2 animated" :class="box4===1 ? 'fadeInDownBig':''"  style="animation-duration: 3s" v-if="box4===1">
+							老师可以在微信小程序上快捷的发送课程提醒，照片、视频、通知、作业等内容给家长
+						</div>
+					</div>
+					<div class="handphone2 animated fadeInDownBig" style="width: 363px;height: 702px;" v-if="box4===2" >
+							<div class="hand2" v-if="hand2flag1" ref="aa">
+								<img src="../store/imges/1_1.png" alt="">
+							</div>
+							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s;animation-timing-function:cubic-bezier(0,-1.32,.83,.6);" v-if="hand2flag1">
+								<img src="../store/imges/shouzhi.png" alt="">
+							</div>
+							<div class="hand2 animated fadeIn" v-if="hand2flag2">
+								<img src="../store/imges/2_2.png" alt="">
+							</div>
+							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s;animation-timing-function:cubic-bezier(0,-1.32,.83,.6);" v-if="hand2flag2">
+								<img src="../store/imges/shouzhi.png" alt="">
+							</div>
+							<div class="hand2 animated fadeIn" v-if="hand2flag3">
+								<img src="../store/imges/3_3.jpg" alt="">
+							</div>
+							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s;animation-timing-function:cubic-bezier(0,-1.32,.83,.6);" v-if="hand2flag3">
+								<img src="../store/imges/shouzhi.png" alt="">
+							</div>
+							<div class="hand2 animated fadeIn" v-if="hand2flag4">
+								<img src="../store/imges/4_4.png" alt="">
+							</div>
+							<div class="cursor1 animated slideInUp" style="animation-duration: 2s;animation-delay:1s;animation-timing-function:cubic-bezier(0,-1.32,.83,.6);" v-if="hand2flag4">
+								<img src="../store/imges/shouzhi.png" alt="">
+							</div>
 					</div>
 				</div>
 			</div>
@@ -330,7 +365,13 @@
 				time2: 5,
 				time3: 3,
 				time4: 10,
-				box4:false,
+				box4:0,
+				hand1flag:false,
+				hand2flag1:false,
+				hand2flag2:false,
+				hand2flag3:false,
+				hand2flag4:false,
+				hand2:false,
 				options: {
 
 					//           //为每个section设置背景色
@@ -415,7 +456,19 @@
 			}
 		},
 		methods: {
-
+			aa(e){
+				let scrFlag=false;
+				let timer=null;
+				let aa=this.$refs.aa;
+				if(!scrFlag){
+					clearTimeout(timer)
+					timer=setTimeout(function(){
+						scrFlag=true;
+						aa.scrollTo(0,420)
+					},1000)
+				}
+				
+			},
 			click() {
 				// vue调用fullpapge的方法
 				this.$refs.page.api.moveSectionDown();
@@ -434,7 +487,11 @@
 					}, 3500)
 					var newa = []
 					this.showtwo = false
-					this.box4=false
+					this.box4=0
+					this.hand2flag1=false;
+					this.hand2flag2=false;
+					this.hand2flag3=false;
+					this.hand2flag4=false;
 					clearInterval(this.settimeou)
 					this.showbigphone=false
 					this.a1 = false
@@ -455,8 +512,11 @@
 					this.assc = 0
 					this.twos = 0
 					this.num = 0
-					this.num = 0
-					this.box4=false
+					this.box4=0
+					this.hand2flag1=false;
+					this.hand2flag2=false;
+					this.hand2flag3=false;
+					this.hand2flag4=false;
 					var that = this
 					this.$nextTick(function(){
 						that.showtwo = true
@@ -496,7 +556,25 @@
 					
 						
 				} else if(td.index == 3) {
-					this.box4=true;
+					this.box4=1;
+					this.hand1flag=true;
+					var that=this;
+					var hand1SetTime=setTimeout(function(){
+							that.box4=2;
+							that.hand2flag1=true;
+							var hand1SetTime=setTimeout(function(){
+								that.hand2flag1=false;
+								that.hand2flag2=true;
+								var hand1SetTime=setTimeout(function(){
+									that.hand2flag2=false;
+									that.hand2flag3=true;
+									var hand1SetTime=setTimeout(function(){
+										that.hand2flag3=false;
+										that.hand2flag4=true;
+									},6000)
+								},6000)
+							},4000)
+					},4000)
 					this.showtwo = false
 					clearInterval(this.settimeou)
 					this.showbigphone=false
@@ -517,7 +595,6 @@
 					this.assc = 0
 					this.twos = 0
 					this.num = 0
-					this.num = 0
 				}else if(td.index == 4){
 					this.time1 = 0
 					this.time2 = 0
@@ -526,9 +603,12 @@
 					this.assc = 0
 					this.twos = 0
 					this.num = 0
-					this.num = 0
 					this.showtwo = false
 					this.box4=false;
+					this.hand2flag1=false;
+					this.hand2flag2=false;
+					this.hand2flag3=false;
+					this.hand2flag4=false;
 					clearInterval(this.settimeou)
 					this.showbigphone=false
 					this.a1 = false
@@ -549,9 +629,12 @@
 					this.assc = 0
 					this.twos = 0
 					this.num = 0
-					this.num = 0
 					this.showtwo = false
 					this.box4=false
+					this.hand2flag1=false;
+					this.hand2flag2=false;
+					this.hand2flag3=false;
+					this.hand2flag4=false;
 					clearInterval(this.settimeou)
 					this.showbigphone=false
 					this.a1 = false
@@ -642,7 +725,6 @@
 
 
 		},
-
 	}
 </script>
 <!-- rotateInUpRight -->
@@ -848,6 +930,13 @@
 		left: 329px;
 	}
 
+	.wenzi{
+		position: relative;
+		left: 1049px;
+		width: 310px;
+		top: -50px;
+	}
+
 	.leftdiv {
 		width: 110px;
 		margin-left: 85px;
@@ -1023,6 +1112,19 @@
 		top: 80px;
 		left: 461px;
 	}
+	.wenzi2{
+		position: relative;
+		left: -161px;
+		width: 290px;
+		top: -280px;
+	}
+	.handphone2{
+		background-image: url(../store/imges/bigphone.png);
+		background-repeat: no-repeat;
+		position: relative;
+		left: 961px;
+		top: 80px;
+	}
 	 .activeP3 {
     	position: absolute;
 		bottom: 205px;
@@ -1100,37 +1202,51 @@
 		justify-content: center;
 		height: 140px;
 		position: absolute;
-		right: 323px;
+		/* right: 323px; */
+		right: 203px;
 		bottom: 239px;
-		animation-delay:3s;
+		/* animation-delay:1s; */
+		animation: left 2s 1s ease;
+		animation-fill-mode: forwards;
+	}
+	.handtype1 p:nth-child(1){
+		position: relative;
+		left: 16px;
 	}
 	.handtype2{
 		position: absolute;
-		right: 310px;
+		right: 190px;
 		bottom: 399px;
-		animation-delay:3s;
+		animation: left 2s 1s ease;
+		animation-fill-mode: forwards;
 	}
 	.handtype2 p:nth-child(1){
 		position: relative;
 		left: -60px;
-		top:7px;
+		top:20px;
 	}
 	.handtype3{
 		position: absolute;
 		left:113px;
-		top: -280px;
-		animation-delay:3s;
+		top: -160px;
+		animation: up 2s 1s ease;
+		animation-fill-mode: forwards;
+	}
+	.handtype3 p:nth-child(1){
+		position: relative;
+		top: 20px;
 	}
 	.handtype4{
 		position: absolute;
-		left: 340px;
+		left: 220px;
 		bottom: 399px;
-		animation-delay:3s;
+		animation: right 2s 1s ease;
+		animation-fill-mode: forwards;
 	}
 	.handtype4 p:nth-child(1){
 		position: relative;
 		left: 55px;
-		top:20px;
+		top:36px;
 	}
 	.handtype4 p:nth-child(2){
 		position: relative;
@@ -1143,9 +1259,14 @@
 		height: 140px;
 		line-height: 140px;
 		position: absolute;
-		right: -283px;
+		right: -163px;
 		bottom: 239px;
-		animation-delay:3s;
+		animation: right 2s 1s ease;
+		animation-fill-mode: forwards;
+	}
+	.handtype5 p:nth-child(2){
+		position: relative;
+		right: 16px;
 	}
 	.cursor{
 		position: absolute;
@@ -1154,5 +1275,60 @@
 	}
 	.cursor img{
 		transform: scale(1.5)
+	}
+	.cursor1{
+		position: absolute;
+		right: -60px;
+		bottom: 80px;
+	}
+	.cursor1 img{
+		transform: scale(1.5)
+	}
+	.hand2{
+		width: 308px;
+		height: 528px;
+		position: absolute;
+		left: 25px;
+		top: 62px;
+		overflow-y: auto;
+		/* overflow: hidden; */
+		/* cursor: pointer; */
+		animation-direction: 3s;
+		animation-delay: 2s;
+	}
+	.hand2::-webkit-scrollbar{
+		width:5px;
+		height:5px;
+	}
+	.hand2::-webkit-scrollbar-thumb{
+		background: #bfbfbf;
+		border-radius:10px;
+	}
+	.hand2 img{
+		width: 308px;
+	}
+	@keyframes left{
+		0%{
+			transform:scale(.5) translateX(-60px);
+		}
+		100%{
+			transform:scale(1) translateX(-120px);
+		}
+	}
+	@keyframes up {
+		0%{
+			transform:scale(.5) translateY(-60px);
+		}
+		100%{
+			transform:scale(1) translateY(-120px);
+		}
+	}
+	@keyframes right{
+		0%{
+			transform:scale(.5) translateX(60px);
+		}
+		100%{
+			transform:scale(1) translateX(120px);
+		}
 	}
 </style>
