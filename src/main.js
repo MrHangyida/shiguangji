@@ -2,7 +2,8 @@ import Vue from 'vue'
 import ElementUI from 'element-ui' // eleUI组件库
 import 'element-ui/lib/theme-chalk/index.css'; //eleUI css
 import App from './App.vue' // 组件入口
-import router from './router' // 路由
+import router from './router' // 路由+
+import 'lib-flexible/flexible';
 // import axios from 'axios'
 // import './axios/request.js' //request.js的路径
 import animate from 'animate.css'

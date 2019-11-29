@@ -471,9 +471,7 @@
 						that.jindu2();
 						that.jindu3();
 					}, 6500)
-					
 					clearInterval(this.settimeou);
-					
 				} else if (td.index == 1) {
 					this.assc = 0;
 					this.time1 = 0;
@@ -2056,6 +2054,9 @@
 					}
 					
 			}
+		}
+		.box5{
+			font-size: 22px;
 		}
 	}
 </style>
