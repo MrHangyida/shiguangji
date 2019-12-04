@@ -1,5 +1,11 @@
 module.exports = {
-  plugins: {
-    autoprefixer: {}
-  }
+    plugins: {
+        'autoprefixer': {
+            browsers: ['Android >= 4.0', 'iOS >= 7']
+        },
+        'postcss-pxtorem': {
+            rootValue: 192, //
+            propList: ['*'] // 设置哪些属性可以从px变为rem。“！”表示不匹配，“ !font* ”表示不匹配字体相关属性
+        }
+    }
 }
