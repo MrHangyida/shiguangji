@@ -15,7 +15,7 @@
     "element-ui": "^2.11.1",
     "fullpage.js": "^3.0.7",
     "lib-flexible": "^0.3.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "sass-loader": "^8.0.0",
     "v-charts": "^1.19.0",
     "vue": "^2.6.10",
